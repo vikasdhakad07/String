@@ -1,0 +1,23 @@
+Method 01: Find length of longest subsequence
+
+
+class Solution 
+{ 
+    int maxSubsequenceSubstring(String X, String Y, int N, int M) 
+    {
+        // code here
+        int ans=0;
+        for(int j=0;j<M;j++){
+            int count=0;
+            int k=j;
+            for(int i=0;i<N&&k<M;i++){
+                if(X.charAt(i)==Y.charAt(k)){
+                    count++;
+                    k++;
+                }
+                ans=Math.max(ans,count);
+            }
+        }
+        return ans;
+    }
+} 

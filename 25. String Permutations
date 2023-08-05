@@ -1,0 +1,30 @@
+Method 01: String Permutations
+
+
+class Solution
+{
+    public ArrayList<String> permutation(String S)
+    {
+        //Your code here
+        ArrayList<String> ans=new ArrayList<>();
+        printpermutation(S,"",ans);
+         Collections.sort(ans);
+        return ans;
+    }
+	
+	public void printpermutation(String S,String temp,ArrayList<String> ans){
+	    if(S.length()==0){
+	        ans.add(temp);
+	        return;
+	    }
+	    
+	    
+	    for(int i=0;i<S.length();i++){
+	        char ch=S.charAt(i);
+	        String lque=S.substring(0,i);
+	        String rque=S.substring(i+1);
+	        String total=lque+rque;
+	        printpermutation(total,temp+ch,ans);
+	    }
+	}
+}

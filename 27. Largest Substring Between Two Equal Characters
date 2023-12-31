@@ -8,7 +8,7 @@ class Solution {
         for(int i=0;i<s.length();i++){
             for(int j=i+1;j<s.length();j++){
                 if(s.charAt(i)==s.charAt(j)){
-                ans=Math.max(i,j-i-1);
+                ans=Math.max(ans,j-i-1);
                 }
             }
         }

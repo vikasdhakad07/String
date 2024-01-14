@@ -1,0 +1,19 @@
+Method 01: Find duplicate rows in a binary matrix
+
+
+class Solution
+{
+    public static ArrayList<Integer> repeatedRows(int matrix[][], int m, int n)
+    {
+        //code here
+        ArrayList<Integer> ans = new ArrayList<>();
+        Set<String> set = new HashSet<>();
+        for(int i=0;i<m;i++){
+          if(set.contains(Arrays.toString(matrix[i]))) 
+          ans.add(i);
+          else set.add(Arrays.toString(matrix[i]));
+        }
+        
+        return ans;
+    }
+}
